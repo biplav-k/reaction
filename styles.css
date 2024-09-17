@@ -1,0 +1,119 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  width: 90vw; /* Scale based on viewport width */
+  max-width: 600px; /* Cap the max width for larger screens */
+  height: 90vh; /* Scale based on viewport height */
+  max-height: 600px; /* Cap the max height for larger screens */
+}
+
+.target-shape {
+  font-size: min(2vw, 24px); /* Responsive font size but never smaller than 24px */
+  font-weight: bold;
+  padding: 1vw;
+  margin-bottom: 2vw;
+  border-radius: 5px;
+
+}
+
+.target-shape svg {
+  width: min(10vw, 80px); /* Responsive size based on viewport but no larger than 80px */
+  height: min(10vw, 80px);
+  bottom: -9px;
+  position: relative;
+}
+
+.score-board {
+  font-size: min(3vw, 24px); /* Make font size responsive but never smaller than 24px */
+  margin-bottom: 2vw;
+}
+
+.shapes-container {
+  position: relative;
+  width: min(90vw, 500px); /* Max width of 500px for larger screens */
+  height: min(90vw, 500px); /* Max height of 500px for larger screens */
+  background-color: #000000;
+  border: 2px solid white;
+  margin: 0 auto;
+  overflow: hidden;
+  display: none; /* Hidden until game starts */
+}
+
+.shape {
+  position: absolute;
+  width: min(10vw, 80px); /* Responsive shape size, max 80px */
+  height: min(10vw, 80px);
+  cursor: pointer;
+}
+
+.start-button {
+  padding: 1vw 2vw; /* Responsive padding */
+  font-size: min(3vw, 18px); /* Responsive font size but no smaller than 18px */
+  background-color: yellow;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2vw;
+}
+
+.start-button:hover {
+  background-color: orange;
+}
+
+/* Media Query for larger screens (e.g., desktop devices) */
+@media (min-width: 1024px) {
+  .shapes-container {
+    width: 500px; /* Fixed size for larger screens */
+    height: 500px;
+  }
+
+  .shape {
+    width: 80px; /* Fixed size for shapes on larger screens */
+    height: 80px;
+  }
+
+  .target-shape svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .target-shape {
+    height: auto;
+  }
+}
+
+/* Media Query for smaller screens (e.g., mobile devices) */
+@media (max-width: 600px) {
+  .shapes-container {
+    width: 80vw;
+    height: 80vw;
+  }
+
+  .shape {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .target-shape svg {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .target-shape {
+    height: 15vw;
+  }
+}

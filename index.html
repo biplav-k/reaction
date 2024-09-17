@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="target-shape" id="targetShape">Click: ?</div>
+        <div class="score-board">
+            <p>Score: <span id="score">0</span></p>
+            <p id="timeLeft">Time Left: 60s</p>
+        </div>
+        <audio id="beepSound" src="beep.wav" preload="auto"></audio>
+        <!-- Start button -->
+        <button id="startButton" class="start-button">Start Game</button>
+
+        <div class="shapes-container" id="shapesContainer">
+            <!-- SVG shapes will be inserted here dynamically -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
