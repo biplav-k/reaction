@@ -68,7 +68,7 @@ function handleShapeClick(clickedShape) {
 }
 
 function shuffleShapes() {
-    const shuffledShapes = shapes.sort(() => 0.5 - Math.random());
+    const shuffledShapes = shapes.sort(() => 1 - Math.random());
     shapesContainer.innerHTML = '';
     placedShapes = [];
     shuffledShapes.forEach(shape => {
